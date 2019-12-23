@@ -8,10 +8,11 @@ export class ConfigService {
     const isDevelopmentEnv = process.env.NODE_ENV !== 'production';
 
     if (isDevelopmentEnv) {
-      const envFilePath = __dirname + '../../.env';
+      const envFilePath = __dirname + '/../../.env';
       const existsPath = fs.existsSync(envFilePath);
 
       if (!existsPath) {
+        // tslint:disable-next-line:no-console
         console.log('.env file does not exists!');
         process.exit(0);
       }
